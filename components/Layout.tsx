@@ -57,9 +57,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <main className="pt-[80px] flex-grow">{children}</main>
 
-      <footer className="bg-primary-dark text-white py-6 mt-auto">
+      {/* put a x to y to x gradient */}
+      <footer className="bg-gradient-to-r from-transparent via-brand to-transparent py-6">
         <div className="max-w-7xl mx-auto text-center font-body">
-          © 2025 Mosquée de Gennevilliers — Tous droits réservés
+          © {new Date().getFullYear()} Mosquée de Gennevilliers — Tous droits
+          réservés
         </div>
       </footer>
     </div>

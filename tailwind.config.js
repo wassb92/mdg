@@ -10,9 +10,9 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          light: "#EFFCF6", // pale mint
-          DEFAULT: "#0A6F6F", // deep teal
-          dark: "#034646", // darkest teal
+          light: "#E0F2FE", // light blue
+          DEFAULT: "#2076c9", // deep teal
+          dark: "#0E4C92", // navy blue
         },
         accent: {
           light: "#FFF8E1", // soft gold
