@@ -46,3 +46,24 @@ a {
     color-scheme: dark;
   }
 }
+
+@keyframes headerGradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.header-animated {
+  background: linear-gradient(
+    220deg,
+    transparent 0%,
+    #2076c9 50%,
+    transparent 100%
+  );
+  background-size: 800% 800%;
+  animation: headerGradient 20s ease infinite;
+}
