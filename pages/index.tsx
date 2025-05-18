@@ -1,6 +1,13 @@
 import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    fetch("/api/hello")
+      .then((res) => res.json())
+      .then((data) => console.log("API says:", data.message))
+      .catch((err) => console.error("Fetch error:", err));
+  }, []);
+
   const events = [
     { title: "Concours de Coran", date: "10 mai 2025" },
     { title: "Conférence Parcoursup", date: "4 janvier 2025" },
@@ -38,7 +45,7 @@ export default function Home() {
           <div className="mt-8 w-11/12 rounded-xl overflow-hidden animate-slideUp delay-400 shadow-white shadow-[0px_0px_25px_15px]">
             <iframe
               src="https://mawaqit.net/fr/m/ennour"
-              className="w-full h-[600px] md:h-[800px] border-none"
+              className="w-full h-[400px] md:h-[600px] border-none"
               allowFullScreen
               scrolling="no"
             />
