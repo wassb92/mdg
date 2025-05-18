@@ -82,11 +82,22 @@ export default function Hero() {
         >
           ٱدْخُلُوهَا بِسَلَٰمٍ ءَامِنِينَ
         </motion.p>
+        {/* only animated pulse shadow, not all the mawaqit section */}
         <motion.div
-          className="mt-4 w-4/5 h-[59vh] rounded-xl overflow-hidden shadow-white shadow-[0px_0px_25px_15px]"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 1.6, duration: 0.6 }}
+          className="mt-4 w-4/5 h-[59vh] rounded-xl overflow-hidden"
+          style={{ boxShadow: "0px 0px 40px 25px rgba(255,255,255,0.3)" }}
+          animate={{
+            boxShadow: [
+              "0px 0px 40px 25px rgba(255,255,255,0.3)", // base
+              "0px 0px 40px 25px rgba(255,255,255,1)", // peak
+            ],
+          }}
+          transition={{
+            duration: 1,
+            repeat: Infinity,
+            ease: "easeInOut",
+            repeatType: "reverse",
+          }}
         >
           <iframe
             src="https://mawaqit.net/fr/m/ennour"
@@ -97,7 +108,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
       <motion.div
-        // if the screen is smaller than 640px, set the margin top to 8, else set it to 4
         className="absolute bottom-0 left-0 right-0 flex justify-center mb-2"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
