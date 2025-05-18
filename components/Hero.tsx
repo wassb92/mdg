@@ -1,6 +1,33 @@
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
+const ScrollBottom = () => {
+  return (
+    <div
+      className="animate-bounce bg-white w-10 h-10 ring-1 ring-slate-900/5 shadow-lg rounded-full flex items-center justify-center mx-auto hover:cursor-pointer"
+      onClick={() => {
+        window.scrollTo({
+          top: window.innerHeight - 80,
+          behavior: "smooth",
+        });
+      }}
+    >
+      <svg
+        className="w-6 h-6 text-brand stroke-brand"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        stroke="currentColor"
+      >
+        <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  );
+};
+
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
@@ -48,7 +75,7 @@ export default function Hero() {
           السلام عليكم ورحمة الله وبركاته
         </motion.h1>
         <motion.p
-          className="my-4 text-base sm:text-lg text-white/90"
+          className="mt-4 mb-2 text-base sm:text-lg text-white/90"
           initial={{ x: 30, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 1.4, duration: 0.6 }}
@@ -56,7 +83,7 @@ export default function Hero() {
           ٱدْخُلُوهَا بِسَلَٰمٍ ءَامِنِينَ
         </motion.p>
         <motion.div
-          className="mt-8 w-4/5 h-[60vh] rounded-xl overflow-hidden shadow-white shadow-[0px_0px_25px_15px]"
+          className="mt-4 w-4/5 h-[59vh] rounded-xl overflow-hidden shadow-white shadow-[0px_0px_25px_15px]"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 1.6, duration: 0.6 }}
@@ -68,6 +95,15 @@ export default function Hero() {
             scrolling="no"
           />
         </motion.div>
+      </motion.div>
+      <motion.div
+        // if the screen is smaller than 640px, set the margin top to 8, else set it to 4
+        className="absolute bottom-0 left-0 right-0 flex justify-center mb-2"
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 1.8, duration: 0.6 }}
+      >
+        <ScrollBottom />
       </motion.div>
     </motion.section>
   );
