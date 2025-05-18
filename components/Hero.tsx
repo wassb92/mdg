@@ -82,14 +82,13 @@ export default function Hero() {
         >
           ٱدْخُلُوهَا بِسَلَٰمٍ ءَامِنِينَ
         </motion.p>
-        {/* only animated pulse shadow, not all the mawaqit section */}
         <motion.div
           className="mt-4 w-4/5 h-[59vh] rounded-xl overflow-hidden"
           style={{ boxShadow: "0px 0px 40px 25px rgba(255,255,255,0.3)" }}
           animate={{
             boxShadow: [
-              "0px 0px 40px 25px rgba(255,255,255,0.3)", // base
-              "0px 0px 40px 25px rgba(255,255,255,1)", // peak
+              "0px 0px 40px 25px rgba(255,255,255,0.3)",
+              "0px 0px 40px 25px rgba(255,255,255,1)",
             ],
           }}
           transition={{
