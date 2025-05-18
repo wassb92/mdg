@@ -71,11 +71,7 @@ function Header() {
           className="lg:hidden text-white focus:outline-none"
           aria-label="Toggle menu"
         >
-          {mobileOpen ? (
-            <X className="w-6 h-6" />
-          ) : (
-            <Menu className="w-6 h-6" />
-          )}
+          {!mobileOpen && <Menu className="w-6 h-6" />}
         </button>
       </motion.div>
 
@@ -85,6 +81,13 @@ function Header() {
         animate={{ x: mobileOpen ? "0%" : "100%" }}
         transition={{ type: "tween", duration: 0.4 }}
       >
+        <button
+          onClick={() => setMobileOpen(false)}
+          className="absolute top-6 right-6 text-white focus:outline-none"
+          aria-label="Fermer le menu"
+        >
+          <X className="w-8 h-8" />
+        </button>
         {navItems.map(({ label, href, icon: Icon }) => (
           <Link
             key={href}
