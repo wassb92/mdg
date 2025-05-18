@@ -17,11 +17,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-brand to-primary-dark/90 dark:from-primary-dark/90 dark:to-brand-dark/80 py-6 backdrop-blur-sm">
+      <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-brand to-primary-dark/90 dark:from-primary-dark/90 dark:to-brand-dark/80 pt-4 pb-4 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
-          <Link href="/" className="text-2xl font-heading text-white">
-            Mosquée Gennevilliers
-          </Link>
+          <img
+            src={logo}
+            alt="Mosquée de Gennevilliers"
+            className="h-12 w-auto scale-125 rounded-full hover:scale-150 transition-transform cursor-pointer"
+          />
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <Link
@@ -34,14 +36,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             ))}
           </nav>
           <button
-            className="md:hidden text-white text-2xl"
+            className="md:hidden text-main text-2xl"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? "✕" : "☰"}
           </button>
         </div>
         {mobileOpen && (
-          <div className="md:hidden bg-gradient-to-r from-brand-light to-brand/80 py-4">
+          <div className="md:hidden bg-gradient-to-r from-brand to-primary-dark/90 dark:from-primary-dark/90 dark:to-brand-dark/80 mt-2">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -54,10 +56,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         )}
       </header>
-
-      <main className="pt-[80px] flex-grow">{children}</main>
-
-      {/* put a x to y to x gradient */}
+      <main className="flex-grow">{children}</main>
       <footer className="bg-gradient-to-r from-transparent via-brand to-transparent py-6">
         <div className="max-w-7xl mx-auto text-center font-body">
           © {new Date().getFullYear()} Mosquée de Gennevilliers — Tous droits

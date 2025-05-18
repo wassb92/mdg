@@ -9,6 +9,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        mawaqit: "#490094",
         brand: {
           light: "#E0F2FE", // light blue
           DEFAULT: "#2076c9", // deep teal
