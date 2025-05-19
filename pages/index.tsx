@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import Hero from "../components/Hero";
 import Features from "../components/Features";
 import UpcomingEvents from "../components/UpcomingEvents";
-import Contact from "../components/Contact";
 
 export default function Home() {
   useEffect(() => {
@@ -17,7 +16,6 @@ export default function Home() {
       <Hero />
       <Features />
       <UpcomingEvents />
-      <Contact />
     </div>
   );
 }
