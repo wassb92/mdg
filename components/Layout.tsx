@@ -34,7 +34,8 @@ function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="header-animated fixed inset-x-0 top-0 z-50 shadow-xl backdrop-blur-md">
+    // <header className="header-animated fixed inset-x-0 top-0 z-50 shadow-xl backdrop-blur-md">
+    <header className="bg-brand fixed inset-x-0 top-0 z-50 shadow-xl backdrop-blur-md">
       <motion.div
         className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4"
         initial={{ y: -40, opacity: 0 }}
@@ -76,7 +77,7 @@ function Header() {
       </motion.div>
 
       <motion.div
-        className="lg:hidden fixed inset-0 header-animated flex flex-col justify-center items-center h-screen p-6 space-y-6"
+        className="lg:hidden fixed inset-0 bg-brand flex flex-col justify-center items-center h-screen p-6 space-y-6"
         initial={{ x: "100%" }}
         animate={{ x: mobileOpen ? "0%" : "100%" }}
         transition={{ type: "tween", duration: 0.4 }}
