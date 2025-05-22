@@ -61,7 +61,7 @@ export default function Contact() {
 
   return (
     <motion.section
-      className="relative w-full h-screen bg-gradient-to-r from-gray-200 to-gray-400 text-gray-100 flex flex-col md:flex-row overflow-hidden"
+      className="w-full h-screen bg-gradient-to-r from-gray-200 to-gray-400 text-gray-100 flex flex-col md:flex-row overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -73,7 +73,7 @@ export default function Contact() {
         transition={{ delay: 0.3, type: "spring", stiffness: 120 }}
       >
         <motion.h1
-          className="text-4xl sm:text-5xl font-heading font-extrabold mt-16 md:mt-20 text-brand"
+          className="text-4xl sm:text-5xl font-heading font-extrabold text-brand"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.6 }}
@@ -82,12 +82,12 @@ export default function Contact() {
         </motion.h1>
 
         <motion.div
-          className="flex-grow flex items-center justify-center"
+          className="flex-grow flex items-center justify-center mt-4 md:mt-0"
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.7, duration: 0.6 }}
         >
-          <div className="relative bg-white bg-opacity-90 rounded-2xl p-8 md:p-10 mt-2 w-full max-w-2xl shadow-2xl">
+          <div className="relative bg-white bg-opacity-90 rounded-2xl p-8 md:p-10 w-full max-w-2xl shadow-2xl">
             <div className="space-y-4 text-gray-800 text-lg">
               <p className="flex items-center">
                 <span className="font-semibold text-brand mr-2">Adresse :</span>

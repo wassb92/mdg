@@ -36,7 +36,7 @@ export default function Hero() {
 
   return (
     <motion.section
-      className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-brand"
+      className="w-full min-h-screen text-center overflow-hidden bg-brand"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}

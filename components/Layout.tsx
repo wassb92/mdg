@@ -27,9 +27,6 @@ const navItems = [
   { label: "Contact", href: "/contact", icon: Mail },
 ];
 
-const logoSrc =
-  "https://yt3.googleusercontent.com/PK5WXCfRTI9v6fkDwcPGkop2lw0iHH1fg8H88wtxYpXjSH7rNTS_fGsCvaFYCjmcoRtfUhfGuQ=s160-c-k-c0x00ffffff-no-rj";
-
 function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -43,7 +40,7 @@ function Header() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <img
-          src={logoSrc}
+          src="/logo.jpg"
           alt="Mosquée de Gennevilliers"
           className="h-12 w-auto scale-125 rounded-full hover:scale-150 transition-transform cursor-pointer"
         />
@@ -122,7 +119,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       className={`${poppins.variable} font-sans antialiased flex flex-col min-h-screen bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100`}
     >
       <Header />
-      <main className="flex-grow">{children}</main>
+      <main className="flex-grow pt-20">{children}</main>
       <Footer />
     </div>
   );
