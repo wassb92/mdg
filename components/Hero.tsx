@@ -44,9 +44,7 @@ export default function Hero() {
       <motion.video
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover opacity-70"
-        src={
-          "https://videos.pexels.com/video-files/19288757/19288757-uhd_2560_1440_30fps.mp4"
-        }
+        src={"/video/mosquee_overview.mov"}
         autoPlay
         loop
         muted
