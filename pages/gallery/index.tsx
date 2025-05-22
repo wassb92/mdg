@@ -1,31 +1,39 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-// Sample images (replace src with your real image URLs)
+const convertGoogleDriveLinkToImageUrl = (link: string) => {
+  const fileId = link.split("/d/")[1].split("/")[0];
+  return `https://drive.google.com/uc?export=view&id=${fileId}`;
+};
+
 const galleryImages = [
   {
-    src: "/images/gallery1.jpg",
+    src: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg",
     alt: "Mosque interior",
     category: "Architecture",
   },
   {
-    src: "/images/gallery2.jpg",
+    src: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg",
     alt: "Community event",
     category: "Événements",
   },
-  { src: "/images/gallery3.jpg", alt: "Prayer hall", category: "Architecture" },
   {
-    src: "/images/gallery4.jpg",
+    src: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg",
+    alt: "Prayer hall",
+    category: "Architecture",
+  },
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg",
     alt: "Ramadan celebration",
     category: "Temps forts",
   },
   {
-    src: "/images/gallery5.jpg",
+    src: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg",
     alt: "Education class",
     category: "Communauté",
   },
   {
-    src: "/images/gallery6.jpg",
+    src: "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg",
     alt: "Eid gathering",
     category: "Temps forts",
   },
