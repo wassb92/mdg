@@ -10,6 +10,7 @@ import {
   Mail,
   Menu,
   X,
+  BookOpen,
 } from "lucide-react";
 import { Poppins } from "next/font/google";
 
@@ -23,6 +24,7 @@ const navItems = [
   { label: "Accueil", href: "/", icon: Home },
   { label: "Événements", href: "/events", icon: Calendar },
   { label: "Actualités", href: "/news", icon: Newspaper },
+  { label: "Récitations", href: "/recitations", icon: BookOpen },
   { label: "Galerie", href: "/gallery", icon: ImageIcon },
   { label: "Contact", href: "/contact", icon: Mail },
 ];
