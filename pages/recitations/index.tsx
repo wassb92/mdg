@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo } from "react";
-import { SearchIcon } from "lucide-react";
+import { SearchIcon, X as ClearIcon } from "lucide-react";
 import sheikhs, { SheikhVideo } from "@/data/sheikhs";
 import { surahs, Surah } from "@/data/surahs";
 import { motion } from "framer-motion";
@@ -164,6 +164,14 @@ export default function Recitations() {
               onChange={(e) => setSearchTerm(e.target.value)}
               className="block w-full pl-10 pr-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full shadow-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition"
             />
+            {searchTerm && (
+              <button
+                onClick={() => setSearchTerm("")}
+                className="absolute inset-y-0 right-0 pr-3 flex items-center focus:outline-none"
+              >
+                <ClearIcon className="h-5 w-5 text-gray-400 dark:text-gray-500" />
+              </button>
+            )}
           </div>
         </motion.div>
 
@@ -193,7 +201,7 @@ export default function Recitations() {
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ delay: j * 0.05, duration: 0.5 }}
                   >
-                    <h3 className="text-lg font-medium p-4 text-gray-800 dark:text-gray-200">
+                    <h3 className="text-lg font-medium p-4 text-gray-800 dark:text-gray-200 line-clamp-2 h-20">
                       {rec.title}
                     </h3>
                     {rec.url.includes("youtube.com/embed") ? (
