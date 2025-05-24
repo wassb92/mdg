@@ -11,9 +11,9 @@ module.exports = {
       colors: {
         mawaqit: "#490094",
         brand: {
-          light: "#E0F2FE", // light blue
-          DEFAULT: "#2076c9", // deep teal
-          dark: "#0E4C92", // navy blue
+          light: "#d1e9ff", // light teal
+          DEFAULT: "#398fe3", // deep teal
+          dark: "#1a5f8c", // dark teal
         },
         accent: {
           light: "#FFF8E1", // soft gold
